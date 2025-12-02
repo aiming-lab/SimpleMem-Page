@@ -188,7 +188,7 @@ const SimpleMemProjectPage = () => {
                     <div className="bg-slate-100 px-6 py-4 flex items-center justify-between border-b border-slate-200">
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                          Dataset: LoCoMo Evaluation Set
+                          Demo Dataset: LoCoMo Set Sample 0
                         </span>
                       </div>
                       <button
@@ -378,7 +378,7 @@ const SimpleMemProjectPage = () => {
                     <div className="grid grid-cols-2 divide-x divide-slate-200 border-t border-slate-200 bg-slate-50">
                       <div className="p-4 flex flex-col items-center justify-center">
                         <div className="text-xs font-bold text-slate-400 uppercase">
-                          F1 Score
+                          F1 Score (Whole Dataset)
                         </div>
                         <div className="text-2xl font-bold text-slate-400">
                           {comparisonData.mem0.metrics.f1}
@@ -386,7 +386,7 @@ const SimpleMemProjectPage = () => {
                       </div>
                       <div className="p-4 flex flex-col items-center justify-center bg-teal-50/50">
                         <div className="text-xs font-bold text-teal-600 uppercase">
-                          F1 Score
+                          F1 Score (Whole Dataset)
                         </div>
                         <div className="text-3xl font-bold text-teal-600">
                           {comparisonData.simplemem.metrics.f1}
