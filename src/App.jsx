@@ -13,6 +13,9 @@ import {
   Quote,
 } from 'lucide-react';
 
+import baselineVideo from './assets/mem0.mp4';
+import simplememVideo from './assets/simplemem.mp4';
+
 const SimpleMemProjectPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -224,7 +227,7 @@ const SimpleMemProjectPage = () => {
                             playsInline
                             muted
                             onEnded={() => setIsPlaying(false)}
-                            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+                            src={baselineVideo}
                           />
                           {!isPlaying && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all">
@@ -308,7 +311,7 @@ const SimpleMemProjectPage = () => {
                             playsInline
                             muted
                             onEnded={() => setIsPlaying(false)}
-                            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                            src={simplememVideo}
                           />
                           {!isPlaying && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all">
