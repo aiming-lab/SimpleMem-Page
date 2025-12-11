@@ -453,76 +453,70 @@ const SimpleMemProjectPage = () => {
                   <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
                     Quantitative Results
                   </h2>
+
                   <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="bg-slate-50 border-b border-slate-200 px-6 py-4">
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        LoCoMo (GPT-4.1-mini): Time & F1/BLEU-1 (C1–C4)
+                      </h3>
+                      <p className="text-sm text-slate-500">
+                        Per-sample timing (seconds) and GPT-4.1-mini F1 / BLEU-1 scores for the first four categories.
+                      </p>
+                    </div>
                     <div className="overflow-x-auto">
                       <table className="w-full text-left text-sm">
                         <thead className="bg-slate-50 border-b border-slate-200">
                           <tr>
-                            <th className="px-6 py-4 font-semibold text-slate-900">
-                              Method
-                            </th>
-                            <th className="px-6 py-4 font-semibold text-slate-900">
-                              Backbone
-                            </th>
-                            <th className="px-6 py-4 font-semibold text-slate-900">
-                              Multi-Hop F1
-                            </th>
-                            <th className="px-6 py-4 font-semibold text-slate-900">
-                              Temporal F1
-                            </th>
-                            <th className="px-6 py-4 font-semibold text-slate-900">
-                              Avg F1
-                            </th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">Method</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">Construction Time</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">Retrieve Time</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">Total Time</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">C1</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">C2</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">C3</th>
+                            <th className="px-6 py-4 font-semibold text-slate-900">C4</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
-                          <tr>
-                            <td className="px-6 py-4 font-medium text-slate-600">
-                              MemGPT
-                            </td>
-                            <td className="px-6 py-4 text-slate-500">GPT-4o</td>
-                            <td className="px-6 py-4 text-slate-500">22.83</td>
-                            <td className="px-6 py-4 text-slate-500">17.29</td>
-                            <td className="px-6 py-4 text-slate-500">30.01</td>
+                          <tr className="bg-teal-50/40">
+                            <td className="px-6 py-4 font-bold text-teal-900">SimpleMem</td>
+                            <td className="px-6 py-4 text-slate-700">92.6s</td>
+                            <td className="px-6 py-4 text-slate-700">388.3s</td>
+                            <td className="px-6 py-4 text-slate-700">480.9s</td>
+                            <td className="px-6 py-4 text-slate-700">43.46 / 38.82</td>
+                            <td className="px-6 py-4 text-slate-700">58.62 / 50.10</td>
+                            <td className="px-6 py-4 text-slate-700">18.06 / 15.04</td>
+                            <td className="px-6 py-4 text-slate-700">51.12 / 43.53</td>
                           </tr>
                           <tr>
-                            <td className="px-6 py-4 font-medium text-slate-600">
-                              Mem0
-                            </td>
-                            <td className="px-6 py-4 text-slate-500">GPT-4o</td>
-                            <td className="px-6 py-4 text-slate-500">41.23</td>
-                            <td className="px-6 py-4 text-slate-500">44.15</td>
-                            <td className="px-6 py-4 text-slate-500">35.52</td>
+                            <td className="px-6 py-4 font-medium text-slate-700">A-mem</td>
+                            <td className="px-6 py-4 text-slate-600">5140.5s</td>
+                            <td className="px-6 py-4 text-slate-600">796.7s</td>
+                            <td className="px-6 py-4 text-slate-600">5937.2s</td>
+                            <td className="px-6 py-4 text-slate-600">25.06 / 17.32</td>
+                            <td className="px-6 py-4 text-slate-600">51.01 / 44.75</td>
+                            <td className="px-6 py-4 text-slate-600">13.22 / 14.75</td>
+                            <td className="px-6 py-4 text-slate-600">41.02 / 36.99</td>
                           </tr>
-                          <tr className="bg-teal-50/50">
-                            <td className="px-6 py-4 font-bold text-teal-700">
-                              SimpleMem (Ours)
-                            </td>
-                            <td className="px-6 py-4 text-teal-700">GPT-4o</td>
-                            <td className="px-6 py-4 font-bold text-teal-700">
-                              43.15
-                            </td>
-                            <td className="px-6 py-4 font-bold text-teal-700">
-                              47.15
-                            </td>
-                            <td className="px-6 py-4 font-bold text-teal-700">
-                              38.32
-                            </td>
+                          <tr>
+                            <td className="px-6 py-4 font-medium text-slate-700">LightMem</td>
+                            <td className="px-6 py-4 text-slate-600">97.8s</td>
+                            <td className="px-6 py-4 text-slate-600">577.1s</td>
+                            <td className="px-6 py-4 text-slate-600">675.9s</td>
+                            <td className="px-6 py-4 text-slate-600">24.96 / 21.66</td>
+                            <td className="px-6 py-4 text-slate-600">20.55 / 18.39</td>
+                            <td className="px-6 py-4 text-slate-600">22.21 / 19.68</td>
+                            <td className="px-6 py-4 text-slate-600">33.79 / 29.66</td>
                           </tr>
-                          <tr className="bg-teal-100/30 border-l-4 border-teal-500">
-                            <td className="px-6 py-4 font-bold text-teal-900">
-                              SimpleMem-Plus (Ours)
-                            </td>
-                            <td className="px-6 py-4 text-teal-900">GPT-4o</td>
-                            <td className="px-6 py-4 font-bold text-teal-900">
-                              48.53
-                            </td>
-                            <td className="px-6 py-4 font-bold text-teal-900">
-                              58.43
-                            </td>
-                            <td className="px-6 py-4 font-bold text-teal-900">
-                              54.43
-                            </td>
+                          <tr>
+                            <td className="px-6 py-4 font-medium text-slate-700">mem0</td>
+                            <td className="px-6 py-4 text-slate-600">1350.9s</td>
+                            <td className="px-6 py-4 text-slate-600">583.4s</td>
+                            <td className="px-6 py-4 text-slate-600">1934.3s</td>
+                            <td className="px-6 py-4 text-slate-600">30.14 / 27.62</td>
+                            <td className="px-6 py-4 text-slate-600">48.91 / 44.82</td>
+                            <td className="px-6 py-4 text-slate-600">42.35 / 38.92</td>
+                            <td className="px-6 py-4 text-slate-600">41.30 / 36.17</td>
                           </tr>
                         </tbody>
                       </table>
