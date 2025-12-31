@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(python3 -c \"import sys; sys.path.insert(0, ''/home/core/unc/simplemem''); from database.vector_store import VectorStore; import inspect; print(inspect.getfile(VectorStore))\")"
+    ]
+  }
+}
