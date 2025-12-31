@@ -82,6 +82,9 @@ const SimpleMemProjectPage = () => {
             <a href="#demo" className="hover:text-teal-600 transition-colors">
               Demo
             </a>
+            <a href="#framework" className="hover:text-teal-600 transition-colors">
+              Framework
+            </a>
             <a href="#method" className="hover:text-teal-600 transition-colors">
               Method
             </a>
@@ -126,6 +129,13 @@ const SimpleMemProjectPage = () => {
                     </a>
                     <a
                       href="#"
+                      className="flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition-all shadow-lg hover:shadow-xl"
+                    >
+                      <Play size={18} />
+                      <span>Interactive Demo</span>
+                    </a>
+                    <a
+                      href="#"
                       className="flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 border border-slate-200 rounded-full hover:bg-slate-50 transition-all shadow-sm hover:shadow-md"
                     >
                       <Github size={18} />
@@ -154,19 +164,7 @@ const SimpleMemProjectPage = () => {
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-2xl font-bold mb-4 text-slate-900">Abstract</h2>
                   <p className="text-slate-600 leading-relaxed text-justify">
-                    While Large Language Models (LLMs) strive for lifelong interaction
-                    capabilities, current memory architectures face a dilemma: they either
-                    rely on passive context extension, which suffers from the
-                    &quot;Lost-in-the-Middle&quot; phenomenon, or resort to computationally
-                    exorbitant agentic loops. We propose <strong>SimpleMem</strong>, a
-                    minimalist memory framework grounded in the Complementary Learning
-                    Systems (CLS) theory. Unlike systems that store raw chaos (e.g.,
-                    Mem0), SimpleMem operationalizes the memory process through a
-                    streamlined pipeline: (1) Atomic Encoding, (2) Orthogonal Indexing,
-                    and (3) Reconstructive Synthesis. Evaluating on the LoCoMo benchmark,
-                    SimpleMem establishes a new state-of-the-art with an F1 score of
-                    54.43%, outperforming heavy agentic baselines while reducing query
-                    token costs by 30x.
+                    To achieve reliable long-term interaction in complex environments, LLM agents require memory systems to efficiently manage and utilize historical experiences. Existing memory systems often maintain complete interaction histories through passive context extension, which retains massive amounts of redundant information, while agentic workflows that filter noise via iterative loop reasoning incur prohibitive token costs. To address this challenge, we introduce <strong>SimpleMem</strong>, an efficient memory framework grounded in the principle of semantic lossless compression. We propose a three-stage pipeline designed to maximize information density and token utilization: (1) <strong>Semantic Layered Atomization</strong>: We employ an entropy-based non-linear filter to distill raw, unstructured data streams, rejecting low-density noise and decomposing valid dialogue into independent atomic entries indexed across dense, sparse, and symbolic layers; (2) <strong>Recursive Memory Consolidation</strong>: Mimicking biological consolidation, SimpleMem asynchronously integrates fragmented atomic facts into logically synthesized "molecular representations", effectively compressing the semantic space over time; and (3) <strong>Adaptive Orthogonal Retrieval</strong>: By estimating query complexity, the system dynamically modulates retrieval depth and prunes irrelevant search branches to ensure precise, token-efficient context synthesis. Experiments on benchmarks demonstrate that our method surpasses baselines in performance, token consumption, and retrieval speed, achieving an F1 score of 43.24%. Notably, compared to full-context baselines, SimpleMem reduces inference token consumption by <strong>30×</strong>, demonstrating a superior balance between performance and token utilization.
                   </p>
                 </div>
               </section>
@@ -400,47 +398,242 @@ const SimpleMemProjectPage = () => {
                 </div>
               </section>
 
-              {/* Method Section */}
+              {/* Framework Overview Section */}
+              <section
+                id="framework"
+                className="py-10 px-6 md:px-10 border-b border-slate-100 bg-gradient-to-b from-white to-slate-50/40"
+              >
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+                    The SimpleMem Architecture
+                  </h2>
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-slate-700 leading-relaxed text-justify mb-4">
+                      SimpleMem addresses the fundamental challenge of context inflation in long-term LLM interactions through a principled framework grounded in <span className="font-semibold text-teal-700">semantic lossless compression</span>. Unlike existing systems that passively accumulate raw dialogue or rely on expensive iterative reasoning loops, our approach maximizes information density and token utilization through a three-stage pipeline designed to compress, evolve, and efficiently retrieve episodic memories.
+                    </p>
+                    <p className="text-slate-700 leading-relaxed text-justify mb-4">
+                      Drawing inspiration from the Complementary Learning Systems (CLS) theory in cognitive neuroscience, SimpleMem recognizes that effective long-term memory requires more than simple storage—it demands active curation, consolidation, and adaptive access mechanisms. The architecture operates through three tightly integrated stages: <span className="font-semibold text-indigo-700">Semantic Layered Atomization</span> for compression, <span className="font-semibold text-purple-700">Recursive Memory Consolidation</span> for evolution, and <span className="font-semibold text-teal-700">Adaptive Orthogonal Retrieval</span> for utilization. Each stage addresses a specific pathology in existing memory systems while collectively ensuring that the memory substrate remains both semantically rich and computationally tractable.
+                    </p>
+
+                    {/* Architecture Diagram */}
+                    <div className="my-8 bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                      <div className="bg-gradient-to-r from-teal-50 to-indigo-50 px-6 py-3 border-b border-slate-200">
+                        <p className="text-sm font-semibold text-slate-700 text-center">
+                          Figure 1: The SimpleMem Three-Stage Pipeline Architecture
+                        </p>
+                      </div>
+                      <div className="p-6 bg-slate-50">
+                        <img
+                          src="https://via.placeholder.com/1200x500/e2e8f0/475569?text=SimpleMem+Architecture+Diagram+%28Replace+with+actual+figure%29"
+                          alt="SimpleMem Architecture: Three-stage pipeline showing (1) Semantic Layered Atomization with entropy-based filtering, (2) Recursive Memory Consolidation clustering atoms into molecular representations, and (3) Adaptive Orthogonal Retrieval with complexity-aware pruning"
+                          className="w-full h-auto rounded-lg shadow-sm"
+                        />
+                      </div>
+                      <div className="px-6 py-4 bg-white border-t border-slate-200">
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          <strong>Figure 1:</strong> SimpleMem mitigates context inflation through three stages. (1) <span className="text-indigo-700 font-semibold">Entropic Atomization</span> compresses high-entropy interactions by removing redundancy and decomposing dialogue into atomic memory units. (2) <span className="text-purple-700 font-semibold">Recursive Consolidation</span> organizes these units into higher-order "molecular" Hyper-Nodes. (3) <span className="text-teal-700 font-semibold">Orthogonal Retrieval</span> adaptively prunes the memory space according to query complexity, maximizing information density.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Method Section - Stage 1 */}
               <section
                 id="method"
                 className="py-10 px-6 md:px-10 border-b border-slate-100"
               >
                 <div className="max-w-4xl mx-auto">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
-                    Core Methodology
-                  </h2>
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
-                      <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center justify-center mb-4 text-teal-600">
-                        <Brain size={24} />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2">Atomic Encoding</h3>
-                      <p className="text-sm text-slate-600">
-                        Transforms ambiguous dialogue (e.g., &quot;he said it yesterday&quot;)
-                        into self-contained facts (&quot;User said [topic] on
-                        2024-05-20&quot;).
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+                      <Cpu size={22} className="text-indigo-600" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-slate-900">
+                      Stage 1: Semantic Layered Atomization
+                    </h2>
+                  </div>
+
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-slate-700 leading-relaxed text-justify mb-4">
+                      The first bottleneck in long-term interaction is what we term <span className="font-semibold">"context inflation"</span>—the accumulation of raw, low-entropy dialogue that dilutes the signal-to-noise ratio of the memory system. Traditional approaches blindly index every conversational turn, resulting in massive redundancy from phatic exchanges, repetitive confirmations, and low-information exchanges. SimpleMem addresses this through an entropy-based gating mechanism that actively filters and restructures information at the source.
+                    </p>
+
+                    <div className="bg-slate-50 border-l-4 border-indigo-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Entropic Filtering</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        We employ a non-linear gating function Φ<sub>gate</sub> to evaluate the information density of incoming dialogue windows. For each sliding window W<sub>t</sub>, the system computes a density score H(W<sub>t</sub>) that balances the emergence of new named entities against semantic divergence from recent history. This metric is formally defined as a weighted combination of entity novelty and semantic deviation, where α controls the relative importance of lexical versus distributional signals.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200">
+                        H(W<sub>t</sub>) = α · |E<sub>new</sub>| / |W<sub>t</sub>| + (1-α) · (1 - cos(E(W<sub>t</sub>), E(H<sub>prev</sub>)))
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify mt-3">
+                        Windows falling below a significance threshold τ<sub>redundant</sub>—typically containing phatic chit-chat or redundant confirmations—are immediately rejected, preventing low-value information from polluting the memory index.
                       </p>
                     </div>
 
-                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
-                      <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center justify-center mb-4 text-teal-600">
-                        <Database size={24} />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2">Orthogonal Indexing</h3>
-                      <p className="text-sm text-slate-600">
-                        Stores memories across complementary layers: Dense (Semantic), Sparse
-                        (Lexical), and Symbolic (Metadata) for robust retrieval.
+                    <div className="bg-slate-50 border-l-4 border-indigo-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">De-linearization Transformation</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        For windows that pass the entropy filter, SimpleMem applies a <span className="font-semibold">de-linearization transformation</span> 𝓕<sub>θ</sub> to resolve contextual dependencies. This process decomposes the continuous dialogue stream into discrete, self-contained atomic entries. The transformation functions as a composite of coreference resolution (Φ<sub>coref</sub>) and temporal anchoring (Φ<sub>time</sub>), ensuring each memory atom is interpretable in isolation.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200 mb-3">
+                        m<sub>k</sub> = 𝓕<sub>θ</sub>(W<sub>t</sub>) = Φ<sub>time</sub> ∘ Φ<sub>coref</sub> ∘ Φ<sub>extract</sub>(W<sub>t</sub>)
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        Critically, the temporal anchoring step converts all relative temporal references (e.g., "next Friday", "yesterday") into absolute ISO-8601 timestamps. This ensures that each atomic entry remains semantically valid regardless of when it is retrieved, eliminating temporal ambiguity that plagues traditional memory systems.
                       </p>
                     </div>
 
-                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
-                      <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center justify-center mb-4 text-teal-600">
-                        <Layers size={24} />
+                    <div className="bg-gradient-to-br from-indigo-50 to-teal-50 border border-indigo-200 p-5 rounded-lg my-6">
+                      <h4 className="text-sm font-bold text-indigo-900 uppercase tracking-wide mb-3">Tri-Layer Orthogonal Indexing</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        To support multi-granular access patterns, each atomic entry is projected into three orthogonal representational spaces. This hybrid structure recognizes that effective memory recall requires different "views" of the same information depending on query semantics.
+                      </p>
+                      <div className="grid md:grid-cols-3 gap-4 mt-4">
+                        <div className="bg-white p-4 rounded-lg border border-slate-200">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Database size={16} className="text-teal-600" />
+                            <h5 className="font-bold text-sm text-slate-800">Semantic Layer</h5>
+                          </div>
+                          <p className="text-xs text-slate-600">
+                            Dense vector embeddings <strong>v<sub>k</sub> ∈ ℝ<sup>d</sup></strong> capture abstract meaning, enabling fuzzy semantic matching (e.g., "latte" matching "hot drink").
+                          </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg border border-slate-200">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Search size={16} className="text-indigo-600" />
+                            <h5 className="font-bold text-sm text-slate-800">Lexical Layer</h5>
+                          </div>
+                          <p className="text-xs text-slate-600">
+                            Sparse representations <strong>h<sub>k</sub> ∈ ℝ<sup>|V|</sup></strong> preserve exact keyword matches and proper nouns, ensuring critical entities aren't lost in vector space.
+                          </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg border border-slate-200">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Layers size={16} className="text-purple-600" />
+                            <h5 className="font-bold text-sm text-slate-800">Symbolic Layer</h5>
+                          </div>
+                          <p className="text-xs text-slate-600">
+                            Structured metadata <strong>ℛ<sub>k</sub> = {'{'}(key, val){'}'}</strong> enables deterministic filtering by timestamps, entity types, and other symbolic constraints.
+                          </p>
+                        </div>
                       </div>
-                      <h3 className="font-bold text-lg mb-2">Reconstructive Synthesis</h3>
-                      <p className="text-sm text-slate-600">
-                        Dynamically assembles relevant context through logical intersection
-                        rather than expensive iterative searches.
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Method Section - Stage 2 */}
+              <section
+                className="py-10 px-6 md:px-10 border-b border-slate-100 bg-slate-50/40"
+              >
+                <div className="max-w-4xl mx-auto">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Brain size={22} className="text-purple-600" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-slate-900">
+                      Stage 2: Recursive Memory Consolidation
+                    </h2>
+                  </div>
+
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-slate-700 leading-relaxed text-justify mb-4">
+                      While atomization prevents redundant storage at the input stage, linear accumulation of discrete memory fragments over time still leads to index bloating and retrieval inefficiency. SimpleMem addresses this through an asynchronous background optimization process inspired by biological memory consolidation—the nocturnal process by which the hippocampus transfers and integrates episodic memories into cortical structures.
+                    </p>
+
+                    <div className="bg-white border-l-4 border-purple-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Semantic Gravity Mechanism</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        The consolidation engine operates through a <span className="font-semibold">semantic gravity mechanism</span> that identifies and correlates related memory entries based on spatiotemporal affinity. We quantify the association strength ω<sub>ij</sub> between two memory atoms m<sub>i</sub> and m<sub>j</sub> as a weighted combination of their semantic similarity (measured via cosine distance in embedding space) and temporal proximity (modeled through exponential decay).
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-slate-50 p-3 rounded border border-slate-200 mb-3">
+                        ω<sub>ij</sub> = β · cos(v<sub>i</sub>, v<sub>j</sub>) + (1-β) · e<sup>-λ|t<sub>i</sub> - t<sub>j</sub>|</sup>
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        This formulation captures the intuition that memories are related both by content similarity and temporal co-occurrence. The parameter β balances semantic versus temporal signals, while λ controls the rate of temporal decay, allowing the system to cluster recent co-occurring events while also connecting semantically similar memories across longer time spans.
+                      </p>
+                    </div>
+
+                    <div className="bg-white border-l-4 border-purple-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Inductive Synthesis of Molecular Representations</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        When a dense cluster of memory fragments 𝓒 forms—defined by pairwise connectivity exceeding threshold τ<sub>cluster</sub>—the system triggers an inductive synthesis step. This operation integrates fragmented, repetitive atomic facts into higher-order <span className="font-semibold text-purple-700">"molecular representations"</span> M<sub>mol</sub> that capture generalized insights rather than episodic details.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-slate-50 p-3 rounded border border-slate-200 mb-3">
+                        M<sub>mol</sub> = 𝓖<sub>syn</sub>({'{'}m<sub>i</sub> | m<sub>i</sub> ∈ 𝓒{'}'})
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        For example, rather than maintaining dozens of individual entries recording "User ordered latte at 9am on Monday", "User ordered latte at 9am on Tuesday", the consolidation process abstracts these into a single molecular insight: "User typically orders latte weekday mornings around 9am". The original atomic fragments are archived to a cold storage tier, effectively compressing the active memory index while preserving the ability to drill down into specific instances when needed.
+                      </p>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 p-5 rounded-lg my-6">
+                      <h4 className="text-sm font-bold text-purple-900 uppercase tracking-wide mb-3">Self-Evolving Memory Topology</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        Unlike static memory architectures that simply accumulate entries, SimpleMem's consolidation process creates a <span className="font-semibold">self-evolving memory topology</span>. As new atomic memories are added and consolidated over time, the system continuously refines its internal representations—compressing frequently recurring patterns into molecular abstractions while maintaining granular access to unique episodic details. This hierarchical organization ensures that retrieval complexity remains sublinear with respect to total interaction history, avoiding the quadratic scaling that plagues flat memory architectures.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Method Section - Stage 3 */}
+              <section
+                className="py-10 px-6 md:px-10 border-b border-slate-100"
+              >
+                <div className="max-w-4xl mx-auto">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center">
+                      <Search size={22} className="text-teal-600" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-slate-900">
+                      Stage 3: Adaptive Orthogonal Retrieval with Pruning
+                    </h2>
+                  </div>
+
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-slate-700 leading-relaxed text-justify mb-4">
+                      Having established an efficient, hierarchically organized memory substrate, the final challenge lies in accessing this information with optimal token economy. Standard retrieval approaches fetch a fixed number of context entries (typically top-k), which either provides insufficient information for complex queries or wastes tokens on simple lookups. SimpleMem introduces a <span className="font-semibold">complexity-aware pruning strategy</span> that dynamically optimizes the ratio of tokens consumed to insights gained.
+                    </p>
+
+                    <div className="bg-slate-50 border-l-4 border-teal-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Hybrid Orthogonal Scoring</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        SimpleMem's retrieval mechanism leverages the tri-layer index established during atomization to compute a hybrid relevance score 𝓢(q, m<sub>k</sub>) for each memory entry. This scoring function aggregates complementary signals from the semantic, lexical, and symbolic layers through a principled fusion strategy.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200 mb-3">
+                        𝓢(q, m<sub>k</sub>) = λ<sub>1</sub> cos(e<sub>q</sub>, v<sub>k</sub>) + λ<sub>2</sub> BM25(q<sub>lex</sub>, S<sub>k</sub>) + γ 𝟙(ℛ<sub>k</sub> ⊨ 𝓒<sub>meta</sub>)
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        The first term captures semantic similarity through dense embeddings, enabling conceptual matching. The second term employs sparse lexical matching (BM25) to ensure exact keyword and entity matches are not lost. The third term acts as a hard symbolic filter—the indicator function 𝟙(·) returns 1 only when the memory's metadata ℛ<sub>k</sub> satisfies query constraints 𝓒<sub>meta</sub> (e.g., timestamp ranges, entity type restrictions). This orthogonal combination ensures that queries can flexibly emphasize different retrieval modes depending on their structure.
+                      </p>
+                    </div>
+
+                    <div className="bg-slate-50 border-l-4 border-teal-500 p-5 rounded-r-lg my-6">
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Dynamic Depth Modulation</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        Rather than retrieving a fixed context window, SimpleMem employs a lightweight classifier to estimate query complexity C<sub>q</sub> ∈ [0, 1], distinguishing between simple fact lookups and complex reasoning requirements. The retrieval depth k<sub>dyn</sub> is then dynamically adjusted based on this complexity estimate.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200 mb-3">
+                        k<sub>dyn</sub> = ⌊k<sub>base</sub> · (1 + δ · C<sub>q</sub>)⌋
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        For low-complexity queries (C<sub>q</sub> → 0), the system retrieves only top-k<sub>min</sub> molecular headers or metadata snippets, minimizing token consumption for straightforward lookups. Conversely, for high-complexity queries (C<sub>q</sub> → 1), the scope expands to top-k<sub>max</sub>, fetching associated atomic details and traversing semantic links to assemble comprehensive context. This adaptive mechanism ensures that token budgets are allocated proportionally to query difficulty.
+                      </p>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 p-5 rounded-lg my-6">
+                      <h4 className="text-sm font-bold text-teal-900 uppercase tracking-wide mb-3">Efficient Context Synthesis</h4>
+                      <p className="text-slate-700 leading-relaxed text-justify mb-3">
+                        The final synthesized context 𝓒<sub>final</sub> is constructed by concatenating the top-k<sub>dyn</sub> ranked memories, each annotated with its timestamp and relevance metadata. This contrasts sharply with iterative agentic approaches that repeatedly query and refine context through multi-turn reasoning loops.
+                      </p>
+                      <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200 mb-3">
+                        𝓒<sub>final</sub> = ⨁<sub>m ∈ Top-k<sub>dyn</sub>(𝓢)</sub> [t<sub>m</sub>: Content(m)]
+                      </p>
+                      <p className="text-slate-700 leading-relaxed text-justify">
+                        By performing a single-pass retrieval with orthogonal filtering and adaptive depth control, SimpleMem achieves comparable or superior accuracy to multi-round agentic systems while reducing token consumption by an order of magnitude. The combination of semantic, lexical, and symbolic pruning ensures that the retrieved context is both maximally relevant and minimally redundant.
                       </p>
                     </div>
                   </div>
