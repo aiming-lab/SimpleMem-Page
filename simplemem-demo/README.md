@@ -25,9 +25,9 @@ This demo allows users to experience SimpleMem's three-stage memory pipeline thr
 
 SimpleMem implements a three-stage pipeline for efficient lifelong memory:
 
-1. **Semantic Layered Atomization** - Entropy-based filtering and atomic memory encoding
+1. **Semantic Structured Compression** - Entropy-based filtering and atomic memory encoding
 2. **Recursive Memory Consolidation** - Self-evolving memory topology
-3. **Adaptive Orthogonal Retrieval** - Tri-layer context synthesis (semantic, lexical, symbolic)
+3. **Adaptive Query-Aware Retrieval** - Multi-view context synthesis (semantic, lexical, symbolic)
 
 ### Demo Application Features
 
@@ -502,8 +502,8 @@ Bob: Got it, see you then
 ### Step 2: Building Memory
 
 Watch as SimpleMem processes your context:
-- ✅ Entropic Atomization: Filtering and decomposing dialogue
-- ✅ Orthogonal Indexing: Creating tri-layer index
+- ✅ Semantic Structured Compression: Filtering and decomposing dialogue
+- ✅ Structured Indexing: Creating multi-view index
 - ✅ Memory Ready: Prepared for retrieval
 
 ### Step 3: Chat with Memory Agent

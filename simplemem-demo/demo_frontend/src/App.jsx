@@ -247,11 +247,11 @@ const BuildingStep = ({ sessionData, onComplete }) => {
         <div className="building-steps">
           <div className={`building-step-item ${progress >= 30 ? 'active' : ''}`}>
             <CheckCircle size={20} />
-            <span>Entropic Atomization: Filtering and decomposing dialogue</span>
+            <span>Semantic Structured Compression: Filtering and decomposing dialogue</span>
           </div>
           <div className={`building-step-item ${progress >= 60 ? 'active' : ''}`}>
             <CheckCircle size={20} />
-            <span>Orthogonal Indexing: Creating tri-layer index (semantic, lexical, symbolic)</span>
+            <span>Structured Indexing: Creating multi-view index (semantic, lexical, symbolic)</span>
           </div>
           <div className={`building-step-item ${progress >= 90 ? 'active' : ''}`}>
             <CheckCircle size={20} />
@@ -370,7 +370,7 @@ const ChatStep = ({ sessionData }) => {
             <div className="empty-state">
               <MessageCircle size={48} />
               <p>Ask questions about the context you provided!</p>
-              <small>SimpleMem will retrieve relevant information using adaptive orthogonal retrieval</small>
+              <small>SimpleMem will retrieve relevant information using adaptive query-aware retrieval</small>
             </div>
           )}
 

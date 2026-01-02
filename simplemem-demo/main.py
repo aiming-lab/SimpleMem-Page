@@ -18,9 +18,9 @@ class SimpleMemSystem:
     SimpleMem Main System
 
     Three-stage pipeline based on Semantic Lossless Compression:
-    1. Entropic Atomization: add_dialogue() -> MemoryBuilder -> VectorStore
+    1. Semantic Structured Compression: add_dialogue() -> MemoryBuilder -> VectorStore
     2. Recursive Consolidation: (background evolution - future work)
-    3. Orthogonal Retrieval: ask() -> HybridRetriever -> AnswerGenerator
+    3. Adaptive Query-Aware Retrieval: ask() -> HybridRetriever -> AnswerGenerator
     """
     def __init__(
         self,

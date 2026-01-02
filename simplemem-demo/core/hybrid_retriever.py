@@ -1,7 +1,7 @@
 """
-Hybrid Retriever - Stage 3: Adaptive Orthogonal Retrieval with Pruning (Section 3.3)
+Hybrid Retriever - Stage 3: Adaptive Query-Aware Retrieval with Pruning (Section 3.3)
 
-Paper Reference: Section 3.3 - Orthogonal Memory Retrieval with Pruning
+Paper Reference: Section 3.3 - Adaptive Query-Aware Retrieval with Pruning
 Implements:
 - Hybrid scoring function S(q, m_k) aggregating semantic, lexical, and symbolic signals (Eq. 7)
 - Query Complexity estimation C_q for adaptive retrieval depth (Eq. 8)
@@ -21,12 +21,12 @@ import concurrent.futures
 
 class HybridRetriever:
     """
-    Hybrid Retriever - Stage 3: Adaptive Orthogonal Retrieval with Pruning
+    Hybrid Retriever - Stage 3: Adaptive Query-Aware Retrieval with Pruning
 
-    Paper Reference: Section 3.3 - Orthogonal Memory Retrieval with Pruning
+    Paper Reference: Section 3.3 - Adaptive Query-Aware Retrieval with Pruning
 
     Core Components:
-    1. Orthogonal Retrieval across three layers:
+    1. Multi-view Retrieval across three layers:
        - Semantic Layer: Dense vector similarity
        - Lexical Layer: Sparse keyword matching (BM25)
        - Symbolic Layer: Metadata filtering

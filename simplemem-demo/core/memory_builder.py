@@ -1,7 +1,7 @@
 """
-Memory Builder - Stage 1: Semantic Layered Atomization (Section 3.1)
+Memory Builder - Stage 1: Semantic Structured Compression (Section 3.1)
 
-Implements Entropic Atomization and Indexing:
+Implements Semantic Structured Compression and Indexing:
 - Entropy-based non-linear filter: Φ_gate (conceptual - filters low-density dialogue)
 - De-linearization transformation: F_θ (converts dialogue to atomic entries)
 - Generates self-contained Atomic Entries {m_k} via coreference resolution and temporal anchoring
@@ -19,9 +19,9 @@ from functools import partial
 
 class MemoryBuilder:
     """
-    Memory Builder - Stage 1: Semantic Layered Atomization
+    Memory Builder - Stage 1: Semantic Structured Compression
 
-    Paper Reference: Section 3.1 - Entropic Atomization and Indexing
+    Paper Reference: Section 3.1 - Semantic Structured Compression and Indexing
 
     Core Functions:
     1. Entropy-based filtering (implicit via window processing)

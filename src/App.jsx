@@ -26,7 +26,7 @@ const SimpleMemProjectPage = () => {
 
   // BibTeX 内容
   const bibtexContent = `@article{simplemem2025,
-  title={SimpleMem: Episodic Memory for Lifelong Agents via Atomic Encoding and Orthogonal Indexing},
+  title={SimpleMem: Episodic Memory for Lifelong Agents via Atomic Encoding and Structured Indexing},
   author={Author One and Author Two and Author Three and Author Four},
   journal={arXiv preprint arXiv:2504.xxxxx},
   year={2025}
@@ -105,7 +105,7 @@ const SimpleMemProjectPage = () => {
               <section className="pt-10 pb-10 px-6 md:px-10 border-b border-slate-100">
                 <div className="text-center">
                   <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-                    SimpleMem: Episodic Memory for Lifelong Agents via Atomic Encoding and Orthogonal Indexing
+                    SimpleMem: Episodic Memory for Lifelong Agents via Atomic Encoding and Structured Indexing
                   </h1>
 
                   <div className="flex flex-wrap justify-center gap-4 text-lg text-teal-700 mb-8">
@@ -164,7 +164,7 @@ const SimpleMemProjectPage = () => {
                 <div className="max-w-3xl mx-auto">
                   <h2 className="text-2xl font-bold mb-4 text-slate-900">Abstract</h2>
                   <p className="text-slate-600 leading-relaxed text-justify">
-                    To achieve reliable long-term interaction in complex environments, LLM agents require memory systems to efficiently manage and utilize historical experiences. Existing memory systems often maintain complete interaction histories through passive context extension, which retains massive amounts of redundant information, while agentic workflows that filter noise via iterative loop reasoning incur prohibitive token costs. To address this challenge, we introduce <strong>SimpleMem</strong>, an efficient memory framework grounded in the principle of semantic lossless compression. We propose a three-stage pipeline designed to maximize information density and token utilization: (1) <strong>Semantic Layered Atomization</strong>: We employ an entropy-based non-linear filter to distill raw, unstructured data streams, rejecting low-density noise and decomposing valid dialogue into independent atomic entries indexed across dense, sparse, and symbolic layers; (2) <strong>Recursive Memory Consolidation</strong>: Mimicking biological consolidation, SimpleMem asynchronously integrates fragmented atomic facts into logically synthesized "molecular representations", effectively compressing the semantic space over time; and (3) <strong>Adaptive Orthogonal Retrieval</strong>: By estimating query complexity, the system dynamically modulates retrieval depth and prunes irrelevant search branches to ensure precise, token-efficient context synthesis. Experiments on benchmarks demonstrate that our method surpasses baselines in performance, token consumption, and retrieval speed, achieving an F1 score of 43.24%. Notably, compared to full-context baselines, SimpleMem reduces inference token consumption by <strong>30×</strong>, demonstrating a superior balance between performance and token utilization.
+                    To achieve reliable long-term interaction in complex environments, LLM agents require memory systems to efficiently manage and utilize historical experiences. Existing memory systems often maintain complete interaction histories through passive context extension, which retains massive amounts of redundant information, while agentic workflows that filter noise via iterative loop reasoning incur prohibitive token costs. To address this challenge, we introduce <strong>SimpleMem</strong>, an efficient memory framework grounded in the principle of semantic lossless compression. We propose a three-stage pipeline designed to maximize information density and token utilization: (1) <strong>Semantic Structured Compression</strong>: We employ an entropy-based non-linear filter to distill raw, unstructured data streams, rejecting low-density noise and decomposing valid dialogue into independent atomic entries indexed across dense, sparse, and symbolic layers; (2) <strong>Recursive Memory Consolidation</strong>: Mimicking biological consolidation, SimpleMem asynchronously integrates fragmented atomic facts into logically synthesized "molecular representations", effectively compressing the semantic space over time; and (3) <strong>Adaptive Query-Aware Retrieval</strong>: By estimating query complexity, the system dynamically modulates retrieval depth and prunes irrelevant search branches to ensure precise, token-efficient context synthesis. Experiments on benchmarks demonstrate that our method surpasses baselines in performance, token consumption, and retrieval speed, achieving an F1 score of 43.24%. Notably, compared to full-context baselines, SimpleMem reduces inference token consumption by <strong>30×</strong>, demonstrating a superior balance between performance and token utilization.
                   </p>
                 </div>
               </section>
@@ -362,7 +362,7 @@ const SimpleMemProjectPage = () => {
                                 </div>
                                 <div>
                                   <div className="text-sm font-bold text-indigo-900">
-                                    Orthogonal Indexing
+                                    Structured Indexing
                                   </div>
                                   <div className="text-xs text-indigo-600">
                                     O(1) Precise Lookup
@@ -412,7 +412,7 @@ const SimpleMemProjectPage = () => {
                       SimpleMem addresses the fundamental challenge of context inflation in long-term LLM interactions through a principled framework grounded in <span className="font-semibold text-teal-700">semantic lossless compression</span>. Unlike existing systems that passively accumulate raw dialogue or rely on expensive iterative reasoning loops, our approach maximizes information density and token utilization through a three-stage pipeline designed to compress, evolve, and efficiently retrieve episodic memories.
                     </p>
                     <p className="text-slate-700 leading-relaxed text-justify mb-4">
-                      Drawing inspiration from the Complementary Learning Systems (CLS) theory in cognitive neuroscience, SimpleMem recognizes that effective long-term memory requires more than simple storage—it demands active curation, consolidation, and adaptive access mechanisms. The architecture operates through three tightly integrated stages: <span className="font-semibold text-indigo-700">Semantic Layered Atomization</span> for compression, <span className="font-semibold text-purple-700">Recursive Memory Consolidation</span> for evolution, and <span className="font-semibold text-teal-700">Adaptive Orthogonal Retrieval</span> for utilization. Each stage addresses a specific pathology in existing memory systems while collectively ensuring that the memory substrate remains both semantically rich and computationally tractable.
+                      Drawing inspiration from the Complementary Learning Systems (CLS) theory in cognitive neuroscience, SimpleMem recognizes that effective long-term memory requires more than simple storage—it demands active curation, consolidation, and adaptive access mechanisms. The architecture operates through three tightly integrated stages: <span className="font-semibold text-indigo-700">Semantic Structured Compression</span> for compression, <span className="font-semibold text-purple-700">Recursive Memory Consolidation</span> for evolution, and <span className="font-semibold text-teal-700">Adaptive Query-Aware Retrieval</span> for utilization. Each stage addresses a specific pathology in existing memory systems while collectively ensuring that the memory substrate remains both semantically rich and computationally tractable.
                     </p>
 
                     {/* Architecture Diagram */}
@@ -425,13 +425,13 @@ const SimpleMemProjectPage = () => {
                       <div className="p-6 bg-slate-50">
                         <img
                           src="https://via.placeholder.com/1200x500/e2e8f0/475569?text=SimpleMem+Architecture+Diagram+%28Replace+with+actual+figure%29"
-                          alt="SimpleMem Architecture: Three-stage pipeline showing (1) Semantic Layered Atomization with entropy-based filtering, (2) Recursive Memory Consolidation clustering atoms into molecular representations, and (3) Adaptive Orthogonal Retrieval with complexity-aware pruning"
+                          alt="SimpleMem Architecture: Three-stage pipeline showing (1) Semantic Structured Compression with entropy-based filtering, (2) Recursive Memory Consolidation clustering atoms into molecular representations, and (3) Adaptive Query-Aware Retrieval with complexity-aware pruning"
                           className="w-full h-auto rounded-lg shadow-sm"
                         />
                       </div>
                       <div className="px-6 py-4 bg-white border-t border-slate-200">
                         <p className="text-xs text-slate-600 leading-relaxed">
-                          <strong>Figure 1:</strong> SimpleMem mitigates context inflation through three stages. (1) <span className="text-indigo-700 font-semibold">Entropic Atomization</span> compresses high-entropy interactions by removing redundancy and decomposing dialogue into atomic memory units. (2) <span className="text-purple-700 font-semibold">Recursive Consolidation</span> organizes these units into higher-order "molecular" Hyper-Nodes. (3) <span className="text-teal-700 font-semibold">Orthogonal Retrieval</span> adaptively prunes the memory space according to query complexity, maximizing information density.
+                          <strong>Figure 1:</strong> SimpleMem mitigates context inflation through three stages. (1) <span className="text-indigo-700 font-semibold">Semantic Structured Compression</span> compresses high-entropy interactions by removing redundancy and decomposing dialogue into atomic memory units. (2) <span className="text-purple-700 font-semibold">Recursive Consolidation</span> organizes these units into higher-order "molecular" Hyper-Nodes. (3) <span className="text-teal-700 font-semibold">Adaptive Query-Aware Retrieval</span> adaptively prunes the memory space according to query complexity, maximizing information density.
                         </p>
                       </div>
                     </div>
@@ -450,7 +450,7 @@ const SimpleMemProjectPage = () => {
                       <Cpu size={22} className="text-indigo-600" />
                     </div>
                     <h2 className="text-2xl font-bold text-slate-900">
-                      Stage 1: Semantic Layered Atomization
+                      Stage 1: Semantic Structured Compression
                     </h2>
                   </div>
 
@@ -486,7 +486,7 @@ const SimpleMemProjectPage = () => {
                     </div>
 
                     <div className="bg-gradient-to-br from-indigo-50 to-teal-50 border border-indigo-200 p-5 rounded-lg my-6">
-                      <h4 className="text-sm font-bold text-indigo-900 uppercase tracking-wide mb-3">Tri-Layer Orthogonal Indexing</h4>
+                      <h4 className="text-sm font-bold text-indigo-900 uppercase tracking-wide mb-3">Structured Multi-View Indexing</h4>
                       <p className="text-slate-700 leading-relaxed text-justify mb-3">
                         To support multi-granular access patterns, each atomic entry is projected into three orthogonal representational spaces. This hybrid structure recognizes that effective memory recall requires different "views" of the same information depending on query semantics.
                       </p>
@@ -589,7 +589,7 @@ const SimpleMemProjectPage = () => {
                       <Search size={22} className="text-teal-600" />
                     </div>
                     <h2 className="text-2xl font-bold text-slate-900">
-                      Stage 3: Adaptive Orthogonal Retrieval with Pruning
+                      Stage 3: Adaptive Query-Aware Retrieval with Pruning
                     </h2>
                   </div>
 
@@ -599,9 +599,9 @@ const SimpleMemProjectPage = () => {
                     </p>
 
                     <div className="bg-slate-50 border-l-4 border-teal-500 p-5 rounded-r-lg my-6">
-                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Hybrid Orthogonal Scoring</h4>
+                      <h4 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-3">Hybrid Multi-View Scoring</h4>
                       <p className="text-slate-700 leading-relaxed text-justify mb-3">
-                        SimpleMem's retrieval mechanism leverages the tri-layer index established during atomization to compute a hybrid relevance score 𝓢(q, m<sub>k</sub>) for each memory entry. This scoring function aggregates complementary signals from the semantic, lexical, and symbolic layers through a principled fusion strategy.
+                        SimpleMem's retrieval mechanism leverages the multi-view index established during compression to compute a hybrid relevance score 𝓢(q, m<sub>k</sub>) for each memory entry. This scoring function aggregates complementary signals from the semantic, lexical, and symbolic layers through a principled fusion strategy.
                       </p>
                       <p className="text-slate-600 text-sm font-mono bg-white p-3 rounded border border-slate-200 mb-3">
                         𝓢(q, m<sub>k</sub>) = λ<sub>1</sub> cos(e<sub>q</sub>, v<sub>k</sub>) + λ<sub>2</sub> BM25(q<sub>lex</sub>, S<sub>k</sub>) + γ 𝟙(ℛ<sub>k</sub> ⊨ 𝓒<sub>meta</sub>)

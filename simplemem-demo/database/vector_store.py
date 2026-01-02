@@ -1,8 +1,8 @@
 """
-Vector Store - Tri-Layer Orthogonal Index Implementation (Section 3.1)
+Vector Store - Structured Multi-View Indexing Implementation (Section 3.2)
 
-Paper Reference: Section 3.1 - Eq. (4)
-Implements the three orthogonal indexing dimensions:
+Paper Reference: Section 3.2 - Eq. (4)
+Implements the three indexing dimensions:
 - Semantic Layer: Dense vectors v_k ∈ ℝ^d (embedding-based similarity)
 - Lexical Layer: Sparse vectors h_k ∈ ℝ^|V| (BM25/keyword matching)
 - Symbolic Layer: Metadata R_k = {(key, val)} (structured filtering by time, entities, etc.)
@@ -19,10 +19,10 @@ import os
 
 class VectorStore:
     """
-    Tri-Layer Orthogonal Index - Storage and retrieval for Atomic Entries
+    Structured Multi-View Indexing - Storage and retrieval for Atomic Entries
 
-    Paper Reference: Section 3.1 - Eq. (4)
-    Implements M(m_k) with three orthogonal layers:
+    Paper Reference: Section 3.2 - Eq. (4)
+    Implements M(m_k) with three indexing layers:
     1. Semantic Layer: Dense embedding vectors for conceptual similarity
     2. Lexical Layer: Sparse keyword vectors for precise term matching
     3. Symbolic Layer: Structured metadata for deterministic filtering
@@ -98,7 +98,7 @@ class VectorStore:
         """
         Semantic Layer Search - Dense vector similarity
 
-        Paper Reference: Section 3.1
+        Paper Reference: Section 3.2
         Retrieves based on v_k = E_dense(S_k) where S_k is the lossless restatement
         """
         try:
@@ -141,7 +141,7 @@ class VectorStore:
         """
         Lexical Layer Search - Sparse keyword matching
 
-        Paper Reference: Section 3.1
+        Paper Reference: Section 3.2
         Retrieves based on h_k = Sparse(S_k) for precise term and entity matching
         Uses inclusion-based scoring (approximates BM25)
         """
@@ -211,7 +211,7 @@ class VectorStore:
         """
         Symbolic Layer Search - Metadata-based deterministic filtering
 
-        Paper Reference: Section 3.1
+        Paper Reference: Section 3.2
         Retrieves based on R_k = {(key, val)} for structured constraints
         Enables precise filtering by time, entities, persons, and locations
 
