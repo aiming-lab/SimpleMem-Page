@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/simplemem-page/', // 👈 这里改成你的仓库名
+  base: '/SimpleMem-Page/', // 👈 匹配GitHub仓库名的大小写
 });
