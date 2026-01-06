@@ -15,6 +15,9 @@ import {
 
 import baselineVideo from './assets/mem0.mp4';
 import simplememVideo from './assets/simplemem.mp4';
+import logoIcon from '/Fig_icon.png';
+import frameworkDiagram from '/Fig_framework.png';
+import tradeoffChart from '/Fig_tradeoff.png';
 
 const SimpleMem = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -81,6 +84,19 @@ const SimpleMem = () => {
       <section className="pt-40 pb-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            {/* Logo Icon */}
+            {/* <div className="mb-12 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-3xl blur-3xl"></div>
+                <img
+                  src={logoIcon}
+                  alt="SimpleMem Logo"
+                  className="relative w-full max-w-xl h-auto"
+                  style={{ filter: 'drop-shadow(0 0 40px rgba(20, 184, 166, 0.3))' }}
+                />
+              </div>
+            </div> */}
+
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full mb-8">
               <Sparkles size={16} className="text-teal-400" />
               <span className="text-sm text-teal-400 font-medium">
@@ -195,7 +211,7 @@ const SimpleMem = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Stage 1 */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
@@ -280,6 +296,29 @@ const SimpleMem = () => {
                     <span>Hybrid scoring</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Framework Diagram */}
+          <div className="mt-20">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-black mb-3">
+                Architecture Overview
+              </h3>
+              <p className="text-lg text-slate-400">
+                A three-stage pipeline for efficient lifelong memory through semantic lossless compression
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-2xl"></div>
+              <div className="relative bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+                <img
+                  src={frameworkDiagram}
+                  alt="SimpleMem Framework Architecture"
+                  className="w-full h-auto rounded-2xl"
+                  style={{ filter: 'drop-shadow(0 0 30px rgba(20, 184, 166, 0.2))' }}
+                />
               </div>
             </div>
           </div>
@@ -421,9 +460,39 @@ const SimpleMem = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Benchmark Results
+              Performance vs Efficiency
             </h2>
             <p className="text-xl text-slate-400">
+              SimpleMem achieves superior F1 score with minimal token cost
+            </p>
+          </div>
+
+          {/* Tradeoff Chart */}
+          <div className="mb-20">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-2xl"></div>
+              <div className="relative bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+                <img
+                  src={tradeoffChart}
+                  alt="Performance vs Efficiency Trade-off"
+                  className="w-full h-auto rounded-2xl"
+                  style={{ filter: 'drop-shadow(0 0 30px rgba(20, 184, 166, 0.2))' }}
+                />
+                <div className="mt-6 text-center">
+                  <p className="text-slate-400 italic">
+                    SimpleMem achieves superior F1 score (43.24%) with minimal token cost (~550), occupying the ideal top-left position
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Benchmark Table */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-black mb-3">
+              Benchmark Results
+            </h3>
+            <p className="text-lg text-slate-400">
               LoCoMo Dataset • GPT-4.1-mini
             </p>
           </div>
