@@ -178,21 +178,21 @@ const SimpleMem = () => {
 
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
               <div className="text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">
-                43.24%
+              +26.4%
               </div>
               <div className="text-slate-300 font-semibold mb-2">Average F1 Score</div>
               <div className="text-sm text-slate-500">
-                +26.4% improvement over Mem0
+                improvement over Mem0
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
               <div className="text-5xl font-black bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
-                4×
+                50.2 %
               </div>
               <div className="text-slate-300 font-semibold mb-2">Faster Retrieval</div>
               <div className="text-sm text-slate-500">
-                388.3s vs 1934.3s for Mem0
+                388.3s vs 583.4s for Mem0
               </div>
             </div>
           </div>
