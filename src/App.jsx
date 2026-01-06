@@ -13,8 +13,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 
-import baselineVideo from './assets/mem0.mp4';
-import simplememVideo from './assets/simplemem.mp4';
+import comparisonVideo from './assets/simplemem-new.mp4';
 import logoIcon from '/Fig_icon.png';
 import frameworkDiagram from '/Fig_framework.png';
 import tradeoffChart from '/Fig_tradeoff.png';
@@ -22,8 +21,7 @@ import tradeoffChart from '/Fig_tradeoff.png';
 const SimpleMem = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [copied, setCopied] = useState(false);
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
+  const videoRef = useRef(null);
 
   const bibtexContent = `@article{simplemem2025,
   title={SimpleMem: Efficient Lifelong Memory for LLM Agents},
@@ -39,15 +37,12 @@ const SimpleMem = () => {
   };
 
   const togglePlay = () => {
-    const v1 = videoRef1.current;
-    const v2 = videoRef2.current;
-    if (v1 && v2) {
+    const video = videoRef.current;
+    if (video) {
       if (isPlaying) {
-        v1.pause();
-        v2.pause();
+        video.pause();
       } else {
-        v1.play();
-        v2.play();
+        video.play();
       }
       setIsPlaying(!isPlaying);
     }
@@ -364,89 +359,78 @@ const SimpleMem = () => {
               </button>
             </div>
 
-            <div className="grid md:grid-cols-2">
-              {/* Baseline */}
-              <div className="p-8 border-r border-slate-700">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">Mem0</h3>
-                    <div className="text-sm text-slate-500">Baseline Approach</div>
-                  </div>
-                  <div className="px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full">
-                    <span className="text-xs font-bold text-red-400">34.20% F1</span>
-                  </div>
-                </div>
-
-                <div className="relative aspect-video bg-slate-900 rounded-xl overflow-hidden group mb-6">
-                  <video
-                    ref={videoRef1}
-                    className="w-full h-full object-cover"
-                    playsInline
-                    muted
-                    onEnded={() => setIsPlaying(false)}
-                    src={baselineVideo}
-                  />
-                  {!isPlaying && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
-                        <Play size={32} className="text-white ml-1" />
-                      </div>
+            {/* Video Section */}
+            <div className="p-8">
+              <div
+                className="relative aspect-[3800/1080] bg-slate-900 rounded-xl overflow-hidden group mb-8 ring-2 ring-teal-500/30 cursor-pointer"
+                onClick={togglePlay}
+              >
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-cover"
+                  playsInline
+                  muted
+                  onEnded={() => setIsPlaying(false)}
+                  src={comparisonVideo}
+                />
+                {!isPlaying && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all pointer-events-none">
+                    <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg shadow-teal-500/50">
+                      <Play size={32} className="text-white ml-1" />
                     </div>
-                  )}
-                </div>
-
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg">
-                    <span className="text-slate-400">Token Cost</span>
-                    <span className="font-semibold text-red-400">985 tokens</span>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg">
-                    <span className="text-slate-400">Retrieval Time</span>
-                    <span className="font-semibold text-red-400">583.4s</span>
-                  </div>
-                </div>
+                )}
               </div>
 
-              {/* SimpleMem */}
-              <div className="p-8 bg-gradient-to-br from-teal-950/20 to-cyan-950/20">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold mb-1 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                      SimpleMem
-                    </h3>
-                    <div className="text-sm text-teal-400">Our Approach</div>
-                  </div>
-                  <div className="px-3 py-1 bg-teal-500/20 border border-teal-500/50 rounded-full">
-                    <span className="text-xs font-bold text-teal-400">43.24% F1</span>
-                  </div>
-                </div>
-
-                <div className="relative aspect-video bg-slate-900 rounded-xl overflow-hidden group mb-6 ring-2 ring-teal-500/50">
-                  <video
-                    ref={videoRef2}
-                    className="w-full h-full object-cover"
-                    playsInline
-                    muted
-                    onEnded={() => setIsPlaying(false)}
-                    src={simplememVideo}
-                  />
-                  {!isPlaying && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-all">
-                      <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg shadow-teal-500/50">
-                        <Play size={32} className="text-white ml-1" />
-                      </div>
+              {/* Comparison Stats */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Baseline */}
+                <div className="p-6 bg-slate-900/50 rounded-xl border border-slate-700">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold mb-1">Mem0</h3>
+                      <div className="text-sm text-slate-500">Baseline Approach</div>
                     </div>
-                  )}
+                    <div className="px-3 py-1 bg-red-500/10 border border-red-500/30 rounded-full">
+                      <span className="text-xs font-bold text-red-400">34.20% F1</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg">
+                      <span className="text-slate-400">Token Cost</span>
+                      <span className="font-semibold text-red-400">985 tokens</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg">
+                      <span className="text-slate-400">Retrieval Time</span>
+                      <span className="font-semibold text-red-400">583.4s</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center justify-between p-3 bg-teal-950/30 rounded-lg border border-teal-500/20">
-                    <span className="text-slate-400">Token Cost</span>
-                    <span className="font-semibold text-teal-400">531 tokens</span>
+                {/* SimpleMem */}
+                <div className="p-6 bg-gradient-to-br from-teal-950/20 to-cyan-950/20 rounded-xl border border-teal-500/30">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold mb-1 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                        SimpleMem
+                      </h3>
+                      <div className="text-sm text-teal-400">Our Approach</div>
+                    </div>
+                    <div className="px-3 py-1 bg-teal-500/20 border border-teal-500/50 rounded-full">
+                      <span className="text-xs font-bold text-teal-400">43.24% F1</span>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-teal-950/30 rounded-lg border border-teal-500/20">
-                    <span className="text-slate-400">Retrieval Time</span>
-                    <span className="font-semibold text-teal-400">388.3s</span>
+
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center justify-between p-3 bg-teal-950/30 rounded-lg border border-teal-500/20">
+                      <span className="text-slate-400">Token Cost</span>
+                      <span className="font-semibold text-teal-400">531 tokens</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-teal-950/30 rounded-lg border border-teal-500/20">
+                      <span className="text-slate-400">Retrieval Time</span>
+                      <span className="font-semibold text-teal-400">388.3s</span>
+                    </div>
                   </div>
                 </div>
               </div>
