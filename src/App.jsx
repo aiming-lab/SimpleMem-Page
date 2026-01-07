@@ -153,21 +153,21 @@ const SimpleMem = () => {
 
             {/* Author info */}
             <div className="text-slate-500">
-              <p className="mb-4 text-base">
+              <p className="mb-4 text-xl">
                 <span className="text-slate-300">Jiaqi Liu*</span>, <span className="text-slate-300">Yaofeng Su*</span>, Peng Xia, Siwei Han, Zeyu Zheng, Cihang Xie, Mingyu Ding, Huaxiu Yao
               </p>
               <div className="flex items-center justify-center gap-6 flex-wrap">
                 <div className="flex items-center gap-2">
-                  <img src={uncLogo} alt="UNC-Chapel Hill" className="h-8 w-auto" />
-                  <span className="text-sm text-slate-400">UNC-Chapel Hill</span>
+                  <img src={uncLogo} alt="UNC-Chapel Hill" className="h-10 w-auto" />
+                  <span className="text-lg text-slate-400">UNC-Chapel Hill</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img src={ucbLogo} alt="UC Berkeley" className="h-8 w-auto" />
-                  <span className="text-sm text-slate-400">UC Berkeley</span>
+                  <img src={ucbLogo} alt="UC Berkeley" className="h-10 w-auto" />
+                  <span className="text-lg text-slate-400">UC Berkeley</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img src={ucscLogo} alt="UC Santa Cruz" className="h-8 w-auto" />
-                  <span className="text-sm text-slate-400">UC Santa Cruz</span>
+                  <img src={ucscLogo} alt="UC Santa Cruz" className="h-10 w-auto" />
+                  <span className="text-lg text-slate-400">UC Santa Cruz</span>
                 </div>
               </div>
             </div>
