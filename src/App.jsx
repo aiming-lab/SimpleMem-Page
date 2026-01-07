@@ -17,6 +17,9 @@ import comparisonVideo from './assets/simplemem-new.mp4';
 import logoIcon from '/Fig_icon.png';
 import frameworkDiagram from '/Fig_framework.png';
 import tradeoffChart from '/Fig_tradeoff.png';
+import uncLogo from './assets/1_unc_logo.png';
+import ucbLogo from './assets/2_ucb_logo.png';
+import ucscLogo from './assets/3_ucsc_logo.png';
 
 const SimpleMem = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -149,13 +152,24 @@ const SimpleMem = () => {
             </div>
 
             {/* Author info */}
-            <div className="text-sm text-slate-500">
-              <p className="mb-2">
-                <span className="text-slate-400">Jiaqi Liu*</span>, <span className="text-slate-400">Yaofeng Su*</span>, Peng Xia, Siwei Han, Zeyu Zheng, Cihang Xie, Mingyu Ding, Huaxiu Yao
+            <div className="text-slate-500">
+              <p className="mb-4 text-base">
+                <span className="text-slate-300">Jiaqi Liu*</span>, <span className="text-slate-300">Yaofeng Su*</span>, Peng Xia, Siwei Han, Zeyu Zheng, Cihang Xie, Mingyu Ding, Huaxiu Yao
               </p>
-              <p className="text-xs">
-                UNC-Chapel Hill • UC Berkeley • UC Santa Cruz
-              </p>
+              <div className="flex items-center justify-center gap-6 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <img src={uncLogo} alt="UNC-Chapel Hill" className="h-8 w-auto" />
+                  <span className="text-sm text-slate-400">UNC-Chapel Hill</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <img src={ucbLogo} alt="UC Berkeley" className="h-8 w-auto" />
+                  <span className="text-sm text-slate-400">UC Berkeley</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <img src={ucscLogo} alt="UC Santa Cruz" className="h-8 w-auto" />
+                  <span className="text-sm text-slate-400">UC Santa Cruz</span>
+                </div>
+              </div>
             </div>
           </div>
 
