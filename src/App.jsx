@@ -26,7 +26,7 @@ const SimpleMem = () => {
   const bibtexContent = `@article{simplemem2025,
   title={SimpleMem: Efficient Lifelong Memory for LLM Agents},
   author={Liu, Jiaqi and Su, Yaofeng and Xia, Peng and Han, Siwei and Zheng, Zeyu and Xie, Cihang and Ding, Mingyu and Yao, Huaxiu},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  journal={arXiv preprint arXiv:2601.02553},
   year={2025}
 }`;
 
@@ -114,7 +114,7 @@ const SimpleMem = () => {
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a
-                href="https://arxiv.org"
+                href="https://arxiv.org/abs/2601.02553"
                 className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl hover:shadow-lg hover:shadow-teal-500/50 transition-all font-semibold"
               >
                 <FileText size={20} />
@@ -578,7 +578,7 @@ const SimpleMem = () => {
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href="https://arxiv.org"
+                  href="https://arxiv.org/abs/2601.02553"
                   className="flex items-center gap-2 px-8 py-4 bg-slate-700/50 border border-slate-600 rounded-xl hover:bg-slate-700 hover:border-teal-500/50 transition-all font-semibold"
                 >
                   <FileText size={20} />
@@ -607,7 +607,7 @@ const SimpleMem = () => {
               <a href="https://github.com/aiming-lab/SimpleMem" className="text-slate-400 hover:text-teal-400 transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://arxiv.org" className="text-slate-400 hover:text-teal-400 transition-colors">
+              <a href="https://arxiv.org/abs/2601.02553" className="text-slate-400 hover:text-teal-400 transition-colors">
                 <FileText size={20} />
               </a>
             </div>
